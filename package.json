@@ -1,0 +1,29 @@
+{
+  "name": "bos-desktop",
+  "version": "0.1.0",
+  "productName": "Baidu BOS",
+  "description": "百度BOS桌面客户端",
+  "main": "main.js",
+  "scripts": {
+    "start": "sh dist.sh && electron dist",
+    "debug": "sh dist.sh && electron dist --debug",
+    "build": "sh dist.sh --install && npm run build:osx",
+    "build:osx": "electron-packager dist Icarus --platform=darwin --arch=x64 --version=0.35.4 --out=release --overwrite"
+  },
+  "author": "otakustay",
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "^6.2.0",
+    "denodeify": "^1.2.1",
+    "glob": "^6.0.1",
+    "log4js": "^0.6.29"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.7.4",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-stage-0": "^6.1.18",
+    "electron-packager": "^5.1.1",
+    "electron-prebuilt": "^0.35.4"
+  }
+}
