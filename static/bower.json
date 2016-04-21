@@ -1,0 +1,17 @@
+{
+  "name": "bos-desktop-fe",
+  "authors": [
+    "otakustay <otakustay@gmail.com>"
+  ],
+  "description": "Frontend for BOS Desktop Client",
+  "main": "src/main",
+  "license": "MIT",
+  "directory": "dep",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

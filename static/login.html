@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>登录BOS</title>
+    <script src="src/external/babel-support.js"></script>
+    <script src="src/external/esl.js"></script>
+    <script>
+    window.nodeRequire = require;
+    esl.config({
+        baseUrl: 'src'
+    });
+    </script>
+</head>
+<body>
+    <script>
+    esl(['common/main'], function (main) {
+        main.start();
+    });
+    </script>
+</body>
+</html>
