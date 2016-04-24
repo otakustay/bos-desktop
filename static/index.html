@@ -2,9 +2,100 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Hello World</title>
+    <title>BOS桌面客户端</title>
+    <script>
+    window.nodeRequire = require;
+    delete window.require;
+    </script>
+    <script src="src/external/babel-support.js"></script>
+    <script src="src/external/esl.js"></script>
+    <script>
+    require.config({
+        'baseUrl': 'src',
+        'paths': {},
+        'packages': [
+            {
+                'name': 'diffy-update',
+                'location': '../dep/diffy-update/src',
+                'main': 'update'
+            },
+            {
+                'name': 'emc',
+                'location': '../dep/emc/src',
+                'main': 'Model'
+            },
+            {
+                'name': 'etpl',
+                'location': '../dep/etpl/src',
+                'main': 'main'
+            },
+            {
+                'name': 'mini-event',
+                'location': '../dep/mini-event/src',
+                'main': 'main'
+            }
+        ]
+    });
+    </script>
 </head>
 <body>
-    Hello World
+    <script>
+    require(['index/index'], function (entry) { entry.start(); });
+    </script>
+    <div class="header">
+        <nav id="path">
+            <span>BOS</span>
+            <span class="path-separator" binding-display="isInObjectList">></span>
+            <span binding-display="isInObjectList" binding-content="currentBucket">
+                <script type="text/etpl">
+                ${data}
+                </script>
+            </span>
+        </nav>
+    </div>
+    <ul binding-content="buckets" binding-display="isInBucketList">
+        <script type="text/etpl">
+        <table>
+            <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>创建时间</th>
+                    <th>机房</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- for: ${data} as ${bucket} -->
+                <tr>
+                    <td>${bucket.name}</td>
+                    <td>${bucket.creationTime}</td>
+                    <td>${bucket.locationName}</td>
+                </tr>
+                <!-- /for -->
+            </tbody>
+        </table>
+        </script>
+    </ul>
+    <ul binding-content="objects" binding-display="isInObjectList">
+        <script type="text/etpl">
+        <table>
+            <thead>
+                <tr>
+                    <th>文件名</th>
+                    <th>大小</th>
+                    <th>修改时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- for: ${data} as ${bucket} -->
+                <tr>
+                    <td>${bucket.name}</td>
+                    <td>${bucket.size}</td>
+                    <td>${bucket.creationDate}</td>
+                </tr>
+                <!-- /for -->
+            </tbody>
+        </table>
+        </script>
+    </ul>
 </body>
 </html>

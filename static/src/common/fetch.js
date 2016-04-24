@@ -1,3 +1,5 @@
+/* globals nodeRequire */
+
 let {createHash} = nodeRequire('crypto');
 let {ipcRenderer: ipc} = nodeRequire('electron');
 

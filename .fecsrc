@@ -1,0 +1,20 @@
+{
+    "files": [
+        "static/src/**",
+        "service/**",
+        "!static/src/external/**"
+    ],
+    "eslint": {
+        "rules": {
+            "fecs-valid-jsdoc": {
+                "requireAuthor": false
+            }
+        }
+    },
+    "htmlcs": {
+        "viewport": false
+    },
+    "htmlhint": {
+        "style-disabled": false
+    }
+}

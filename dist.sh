@@ -3,13 +3,14 @@ rm -rf dist
 mkdir dist
 
 # service
-babel --presets=es2015,stage-0 service/**/*.js service/*.js --out-dir dist/
+babel service --out-dir dist/service
 # static
-babel --presets=es2015,stage-0 --plugins=transform-es2015-modules-amd static/**/*.js --out-dir dist/
-cp static/src/external/* dist/static/src/external
+babel static --ignore src/external,dep/**/test,dep/etpl --out-dir dist/static
+cp -r static/src/external dist/static/src
+cp -r static/dep/etpl dist/static/dep
 cp static/*.html dist/static
 # other
-babel --presets=es2015,stage-0 *.js --out-dir dist/
+babel *.js --out-dir dist/
 cp package.json dist/
 
 if [ "$1" == "--install" ]

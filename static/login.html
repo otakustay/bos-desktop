@@ -3,20 +3,55 @@
 <head>
     <meta charset="utf-8" />
     <title>登录BOS</title>
+    <script>
+    window.nodeRequire = require;
+    delete window.require;
+    </script>
     <script src="src/external/babel-support.js"></script>
     <script src="src/external/esl.js"></script>
     <script>
-    window.nodeRequire = require;
-    esl.config({
-        baseUrl: 'src'
+    require.config({
+        'baseUrl': 'src',
+        'paths': {},
+        'packages': [
+            {
+                'name': 'diffy-update',
+                'location': '../dep/diffy-update/src',
+                'main': 'update'
+            },
+            {
+                'name': 'emc',
+                'location': '../dep/emc/src',
+                'main': 'Model'
+            },
+            {
+                'name': 'etpl',
+                'location': '../dep/etpl/src',
+                'main': 'main'
+            },
+            {
+                'name': 'mini-event',
+                'location': '../dep/mini-event/src',
+                'main': 'main'
+            }
+        ]
     });
     </script>
 </head>
 <body>
+    <form id="form" novalidate>
+        <div class="form-field">
+            <input name="ak" placeholder="ak" value="b92ea4a39f3645c8ae5f64ba5fc2a357">
+        </div>
+        <div class="form-field">
+            <input name="sk" placeholder="sk" value="a4ce012968714958a21bb90dc180de17">
+        </div>
+        <div class="form-field form-submit">
+            <button type="submit">登录BOS</button>
+        </div>
+    </form>
     <script>
-    esl(['common/main'], function (main) {
-        main.start();
-    });
+    require(['login/index'], function (entry) { entry.start(); });
     </script>
 </body>
 </html>

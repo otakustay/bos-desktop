@@ -1,0 +1,28 @@
+{
+    "name": "static",
+    "version": "0.0.1",
+    "description": "edp project",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "edp": {
+        "wwwroot": "/",
+        "depDir": "dep",
+        "srcDir": "src",
+        "loaderAutoConfig": "js,htm,html,tpl,vm,phtml",
+        "loaderUrl": "http://s1.bdstatic.com/r/www/cache/ecom/esl/1-8-2/esl.js",
+        "dependencies": {
+            "diffy-update": "latest",
+            "emc": "latest",
+            "mini-event": "latest",
+            "etpl": "latest"
+        },
+        "layout": "v2"
+    },
+    "dependencies": {},
+    "author": "",
+    "repository": "empty",
+    "license": "BSD",
+    "readme": "README"
+}

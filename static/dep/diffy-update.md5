@@ -1,0 +1,18 @@
+{
+    "edp-webserver-config.js": "2241c4c9819a6d5a91842aef49cccc5c",
+    "esdoc.json": "9a468cb7317a5cfa988563eb297a8d37",
+    "LICENSE": "d9f30c90bf090132fa87500399bf9ae9",
+    "module.conf": "d4a7d0b7ebc9256b019a65bf59d051a7",
+    "package.json": "1e18c2c9532387c6d1b6948c42f7fa0a",
+    "README.md": "d62fef4daf4b8dd043dc965906d75423",
+    "src/diffNode.js": "9e071a71a5f505c922ab08d19bca78b0",
+    "src/merge.js": "b1bfa8beb80da30d752984ff87efdb80",
+    "src/update.js": "299f890d3801d0eed8885fc96a387d2e",
+    "test/config.js": "7192ce0a472903de25b03f5abbf875fe",
+    "test/context.html": "9465cc1f00bfb57b4ba9539a996d9c12",
+    "test/babel-support.js": "7dddf44c0217085185dc400345bc2e51",
+    "test/debug.html": "2a9bcb4d24761d37082b4656174acfc3",
+    "test/spec/diffNode.spec.js": "c9c4b5c148046a4082506c91bcd84e6e",
+    "test/spec/merge.spec.js": "46fe5f8880369308b8de439269942336",
+    "test/spec/update.spec.js": "24dc571f8db59120b67bb40946086f42"
+}

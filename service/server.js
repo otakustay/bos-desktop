@@ -25,4 +25,4 @@ export let start = () => {
             }
         }
     );
-}
+};

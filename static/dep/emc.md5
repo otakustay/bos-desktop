@@ -1,0 +1,17 @@
+{
+    "doc/computed-properties.md": "c04bb8ca5fb991d074f33b4c93566ecc",
+    "doc/events.md": "bb8a32de1c89c3914b98a74aa9fb88a9",
+    "doc/immutability.md": "421b3a92e6b439dbd0b780629244ee82",
+    "doc/how-to-use.md": "fcad1b82852cd8fffe8966302ef9346c",
+    "doc/overview.md": "fb1c484d8f32468feed614132bb81db1",
+    "edp-webserver-config.js": "5f999447c00df2e41ff6e662c022930b",
+    "esdoc.json": "0b0dc5915be6ffb37f6e0121361ab8cc",
+    "module.conf": "b298e0edd6ceb327b8444a16e83cbeb5",
+    "package.json": "22840586155cdeeb97c62dfe7bf301b0",
+    "README.md": "4e4e8d6fd8b8b26c6166c09c066b204a",
+    "src/Model.js": "1cec5079ee19a4691366f5f46263f5ad",
+    "test/babel-external-helpers.js": "6874e8aae3d6c90f231a82f73798b5b9",
+    "test/babel-support.js": "7dddf44c0217085185dc400345bc2e51",
+    "test/config.js": "71a190230512cb359881747e0bbb892f",
+    "test/spec/Model.spec.js": "9114605110b0156af39c07ba4a851c1d"
+}
