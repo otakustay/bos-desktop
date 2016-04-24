@@ -8,6 +8,24 @@ const LOCATION_NAME = {
     xg: '香港'
 };
 
+let readableSize = sizeInByte => {
+    if (sizeInByte < 1024) {
+        return sizeInByte + 'B';
+    }
+
+    let units = ['KB', 'MB', 'GB'];
+    let size = sizeInByte;
+
+    for (let unit of units) {
+        size /= 1024;
+        if (size < 1024) {
+            return size.toFixed(2) + unit;
+        }
+    }
+
+    return size.toFixed(2) + 'GB';
+};
+
 export default class ViewModel extends Model {
     constructor() {
         super();
@@ -40,6 +58,16 @@ export default class ViewModel extends Model {
         this.set('buckets', buckets);
     }
 
+    async changeBucket({bucket: bucketName}) {
+        let bucket = this.get('buckets').find(bucket => bucket.name === bucketName);
+        let objects = await this.fetchObjects(bucket);
+
+        return {
+            currentBucket: {$set: bucketName},
+            objects: {$set: objects}
+        };
+    }
+
     async fetchBuckets() {
         let buckets = await fetch('/buckets');
 
@@ -56,8 +84,17 @@ export default class ViewModel extends Model {
     }
 
     async fetchObjects(bucket) {
-        let objects = await fetch(`/buckets/${bucket}/objects`);
+        let objects = await fetch(`/buckets/${bucket.location}/${bucket.name}/objects`);
 
-        return objects;
+        let convertToDisplay = object => {
+            let lastModifiedTime = new Date(object.lastModified);
+            let command = {
+                readableSize: {$set: readableSize(object.size)},
+                lastModifiedTime: {$set: lastModifiedTime.toLocaleString()}
+            };
+            return update(object, command);
+        };
+
+        return objects.map(convertToDisplay);
     }
 }

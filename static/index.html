@@ -66,7 +66,7 @@
             <tbody>
                 <!-- for: ${data} as ${bucket} -->
                 <tr>
-                    <td>${bucket.name}</td>
+                    <td on-click="changeBucket" data-bucket="${bucket.name}">${bucket.name}</td>
                     <td>${bucket.creationTime}</td>
                     <td>${bucket.locationName}</td>
                 </tr>
@@ -86,11 +86,11 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- for: ${data} as ${bucket} -->
+                <!-- for: ${data} as ${object} -->
                 <tr>
-                    <td>${bucket.name}</td>
-                    <td>${bucket.size}</td>
-                    <td>${bucket.creationDate}</td>
+                    <td>${object.key}</td>
+                    <td>${object.readableSize}</td>
+                    <td>${object.lastModifiedTime}</td>
                 </tr>
                 <!-- /for -->
             </tbody>
